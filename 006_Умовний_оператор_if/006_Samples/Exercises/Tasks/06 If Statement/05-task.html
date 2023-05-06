@@ -19,15 +19,10 @@
         let inputLogin = prompt("Введіть логін");
         let inputPassword = prompt("Введіть пароль");
 
-        if (inputLogin == login)
-        {
-            if (inputPassword == password)
-            {
-                alert("Ви авторизовані!");
-            }
+        if (inputLogin == login && inputPassword == password) {
+            alert("Ви авторизовані!");
         }
-        else
-        {
+        else {
             alert("Логін чи пароль введені неправильно");
         }
     </script>

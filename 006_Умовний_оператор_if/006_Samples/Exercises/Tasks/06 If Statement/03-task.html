@@ -16,6 +16,8 @@
         let product2 = "Біндері для паперу 51 мм";
         let product3 = "Ручка кулькова синя";
 
+        let deliverCost = 40;
+
         let productPrice1 = 280.25;
         let productPrice2 = 56;
         let productPrice3 = 12.50;
@@ -31,6 +33,16 @@
         let totalPriceProduct3 = productPrice3 * productQuantity3; 
 
         let total = totalPriceProduct1 + totalPriceProduct2 + totalPriceProduct3;
+
+        let shipping = confirm("Do you need to delivery?");
+        
+        if (shipping) {
+            total += deliverCost;
+            alert("Thank you for purchase :)");
+        } else {
+            alert("Thank you for purchase :)");
+        }
+
         console.log(`Загальна сумма за продукт '${product1}' становить ${totalPriceProduct1}`);
         console.log(`Загальна сумма за продукт '${product2}' становить ${totalPriceProduct2}`);
         console.log(`Загальна сумма за продукт '${product3}' становить ${totalPriceProduct3}`);

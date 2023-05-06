@@ -16,11 +16,15 @@
         let productQuantity = 50;  // кількість одиниць товару на складі
 
         let count = prompt("Яку кулькість одиниць товару ви бажаєте придбати?", 1);
-        let totalSum = count * productPrice;
-        let leftInStorage = productQuantity - count;
 
-        alert("Загальна вартість " + totalSum);
-        alert("Кількість товару залишиться на складі після покупки." + leftInStorage);
+        if (count < 1 || count > productQuantity) {
+            alert("Unfortunately we are unable to do that, our apologizing.");
+        } else if (1 <= count <= productQuantity) {
+            let totalSum = count * productPrice;
+            let leftInStorage = productQuantity - count;
+            alert("Загальна вартість " + totalSum + ".");
+            alert("Кількість товару залишиться на складі після покупки " + leftInStorage + ".");
+        } 
     </script>
 </body>
 </html>
