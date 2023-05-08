@@ -19,23 +19,26 @@
 
         let adult, specialization, position;
 
-        if (age > 18)
-        {
-            adult = "повнолітній";
-        }
-        else
-        {
-            adult = "неповнолітній"
-        }
+        adult = age > 18 ? "повнолітній" : "неповнолітній";
+        // if (age > 18)
+        // {
+        //     adult = "повнолітній";
+        // }
+        // else
+        // {
+        //     adult = "неповнолітній"
+        // }
 
-        if (technology == 1)
-        {
-            specialization = "Frontend";
-        }
-        else
-        {
-            specialization = "Backend";
-        }
+        specialization = technology == 1 ? "Frontend" : "Backend"
+
+        // if (technology == 1)
+        // {
+        //     specialization = "Frontend";
+        // }
+        // else
+        // {
+        //     specialization = "Backend";
+        // }
 
         if (expirience == 0)
         {

@@ -15,24 +15,31 @@
     <script>
         let country = prompt("Введіть назву країни");
 
-        switch (country)
-        {
-            case "USA":
-            case "Great Britain":
-                alert("Англійська мова");
-                break;
-            case "Germany":
-                alert("Німецька мова");
-                break;
-            case "France":
-                alert("Французька мова");
-                break;
-
-            default:
-                alert("Вказаної країни немає в списку");
-                break;
-
+        if (country == "USA" || country == "Great Britain") {
+            alert("Англійська мова");
+        } else if (country == "Germany") {
+            alert("Німецька мова");
+        } else if (country == "France") {
+            alert("Французька мова");
         }
+
+        // switch (country)
+        // {
+        //     case "USA":
+        //     case "Great Britain":
+        //         alert("Англійська мова");
+        //         break;
+        //     case "Germany":
+        //         alert("Німецька мова");
+        //         break;
+        //     case "France":
+        //         alert("Французька мова");
+        //         break;
+
+        //     default:
+        //         alert("Вказаної країни немає в списку");
+        //         break;
+        // }
     </script>
 </body>
 

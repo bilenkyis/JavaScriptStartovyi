@@ -40,13 +40,55 @@
         console.log(`Загальна сума продукту '${product3}' становить ${totalPriceProduct3}`);
 
         let shipping = confirm("Замовити доставку кур'єром?");
-        if (shipping)
-        {
-            total += 40;
-            console.log("Доставка 40");
+
+        function priceCalculation (total, percent) {
+            let discount = (total / 100) * percent;
+            total -= discount;
+            return [total, discount];
+        };
+
+        function displayCost (array, percent, deliveryCost, isFreeShipping) {
+            if (isFreeShipping) {
+                console.log(`Your discount is ${percent}%`);
+                console.log(`Your discount amount is ${orderData[1]}, total amount included the discount is ${orderData[0]}`);
+                console.log("Delivery at our expense.");
+            } else {
+                console.log(`Your discount is ${percent}%`);
+                console.log(`Your discount amount is ${array[1]}$, total amount included the discount is ${array[0]}$`);
+                console.log(`Delivery cost is ${deliveryCost}$, total amount included the delivery cost is ${array[0]+deliveryCost}$`);
+            }
         }
 
-        console.log("Всього " + total);
+        if (shipping)
+        {
+            let deliveryCost = 40;
+            let isFreeShipping;
+            if (500 <= total && total < 1000) {
+                let percent = 5;
+                isFreeShipping = false;
+                orderData = priceCalculation(total, percent);
+                displayCost(orderData, percent, deliveryCost, isFreeShipping);
+            } else if (1000 <= total && total < 1500) {
+                let percent = 10;
+                isFreeShipping = false;
+                orderData = priceCalculation(total, percent);
+                displayCost(orderData, percent, deliveryCost, isFreeShipping);
+            } else if (1500 <= total){
+                let percent = 15;
+                isFreeShipping = true;
+                orderData = priceCalculation(total, percent);
+                displayCost(orderData, percent, deliveryCost, isFreeShipping);
+            } else {
+                console.log(`Total amount included delivery is ${total+deliveryCost}`);
+                console.log("Buyyyyy!!")
+            }
+        } else {
+            console.log(`Total amount is ${total}`);
+            console.log("Buyyyyy!!")
+        }
+
+        
+        
     </script>
 </body>
 
